@@ -1,0 +1,147 @@
+.fondo {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.btn-back{
+  position: absolute;
+  margin-left: 100px;
+  margin-top: 10px;
+}
+
+.btn{
+  background-color: grey;
+}
+
+.c-box{
+  border: 4px solid #080742;
+  border-radius: 50px;
+  position: absolute;
+  margin-top: 7%;
+  margin-left: 13%;
+  padding-right: 20px;
+  width: 1000px;
+  height: 400px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-areas: "nombre nombre nombre"
+                       "photo contenido contenido"
+                       "photo contenido contenido";
+}
+.c-box_title {
+  font-size: 35px;
+  padding-left: 6.3%;
+  line-height: 1.2;
+  position: absolute;
+  width: 100%;
+  padding-top: 42px;
+  grid-area: nombre;
+}
+
+.c-box_photo {
+position: absolute;
+grid-area: photo;
+padding-top: 15%;
+padding-left: 15%;
+}
+
+.c-box_photo > img{
+width: 300px;
+height: 220px;
+}
+
+.c-box_details{
+display: grid;
+grid-template-areas: "lugar lugar lugar material material material "
+                    "series series repeticiones repeticiones descanso descanso"
+                    "zonas zonas zonas zonas zonas zonas";
+padding-top: 40px;
+grid-template-columns: 0.4fr 0.4fr 0.4fr 0.4fr 0.4fr 0.4fr;
+grid-area: contenido;
+}
+
+
+.c-box_details-lugar{
+font-size: 24px;
+line-height: 1.2;
+grid-area: lugar;
+text-align: center;
+display: flex;
+}
+.c-box_details-lugar>p{
+margin: 10px;
+}
+.c-box_details-series{
+  font-size: 24px;
+  line-height: 1.2;
+  text-align: center;
+   grid-area: series;
+  display: flex;
+  flex-direction: row;
+}
+
+.name {
+  font-weight: 900 !important;
+}
+
+.c-box_details-series>p{
+margin: 10px;
+}
+.c-box_details-material {
+  font-size: 24px;
+  line-height: 1.2;
+  text-align: center;
+  grid-area: material;
+  display: flex;
+  flex-direction: row;
+}
+.c-box_details-material>p{
+margin: 10px;
+}
+
+.c-box_details-repeticiones {
+  font-size: 24px;
+  line-height: 1.2;
+  grid-area: repeticiones;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+.c-box_details-repeticiones>p{
+margin: 10px;
+}
+.c-box_details-zonas {
+  font-size: 24px;
+  line-height: 1.2;
+  grid-area: zonas;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.c-box_details-zonas >  p {
+margin: 10px;
+}
+
+.zonas{
+  margin-right: 5px;
+}
+
+.c-box_details-descanso {
+  font-size: 24px;
+  line-height: 1.2;
+  grid-area: descanso;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+.c-box_details-descanso > p {
+margin: 10px;
+}
+
+h1{
+  position: absolute;
+  padding-top: 5%;
+  padding-left: 45%;
+}

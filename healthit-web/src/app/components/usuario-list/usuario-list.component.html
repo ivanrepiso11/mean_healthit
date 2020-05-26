@@ -1,0 +1,39 @@
+<div class="page">
+  <img class="fondo" src="assets/web-images/fondoDesenfocado.jpg">
+  <app-navigation></app-navigation>
+  <div class="content">
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Username</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let usuario of usuarios| paginate: { itemsPerPage: 6, currentPage: p }'>
+          <td>{{usuario.name}}</td>
+          <td>{{usuario.username}}</td>
+          <td><button class="btn btn-info" (click)='editar(usuario._id)'>Editar</button></td>
+          <td><button class="btn btn-danger" (click)='eliminar(usuario._id)'>Eliminar</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+  <ng-template #modalEliminar let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">
+        <span>Eliminar usuario</span>
+      </h4>
+    </div>
+    <div class="modal-body">
+      <p> <span>¿Quiere eliminar al usuario {{nombreUsuario}}?</span></p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-light" (click)="modal.dismiss('Cancel')">Cancel</button>
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Ok');deleteUser();">Ok</button>
+    </div>
+  </ng-template>
+</div>

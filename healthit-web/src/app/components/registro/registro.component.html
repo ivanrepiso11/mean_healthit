@@ -1,0 +1,26 @@
+<div class="page">
+  <img class="fondo" src="assets/web-images/fondoDesenfocado.jpg">
+  <div class="logo" routerLink=''>
+    <img src="assets/web-images/logoNuevo.svg">
+  </div>
+  <form (submit)='registro()'>
+    <div class="c-box">
+      <div class="c-box_name">
+        <input type="text" [(ngModel)]='user.name' name="username" placeholder="nombre" required autofocus>
+      </div>
+      <div class="c-box_username">
+        <input type="text" [(ngModel)]='user.username' name="username" placeholder="nombre de usuario" required>
+      </div>
+      <div class="c-box_password">
+        <input type="password" [(ngModel)]='user.password' name="password" placeholder="contraseña" required>
+      </div>
+      <div class="c-box_confirmPasswd">
+        <input type="password" [(ngModel)]='user.confirmPasswd' name="confirmPasswd" placeholder="confirmar" required>
+      </div>
+    </div>
+    <button type="submit" class="btn-registro">
+      REGISTRARSE
+    </button>
+  </form>
+  <!-- footer con component o a mano, ejemplo bajo -->
+</div>

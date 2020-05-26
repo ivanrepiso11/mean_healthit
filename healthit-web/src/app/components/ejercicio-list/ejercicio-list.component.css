@@ -1,0 +1,57 @@
+.btn-new {
+  margin: 25px;
+  width: 96.5%;
+}
+
+.btn-title{
+  margin-bottom: 0;
+}
+
+.filtro{
+  display: flex;
+  padding: 3%;
+  padding-left: 13%;
+}
+
+.filtro_name{
+  font-size: 25px;
+  margin-right: 3px;
+}
+
+select{
+  height: 35px;
+}
+
+.btn{
+  background-color: grey;
+}
+
+.c-box{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.c-box_title{
+  font-size: 24px;
+  line-height: 1.2;
+  text-align: center;
+  width: 365px;
+  padding-top: 5px;
+}
+
+.c-box_photo{
+  width: 365px;
+  height: 240px;
+  border: 1px solid #1c1c3b;
+}
+
+.row{
+  padding-left: 50px;
+  width: 100%;
+}
+
+h1{
+  text-align: center;
+}

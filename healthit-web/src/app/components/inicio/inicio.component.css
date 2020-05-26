@@ -1,0 +1,65 @@
+.fondo{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.logo{
+  left: 38.5%;
+  top: 8%;
+  width: 22%;
+  position: absolute;
+}
+
+.c-botones {
+  display: flex;
+  position: absolute;
+  top: 33%;
+  width: 100%;
+}
+
+.c-botones_registro{
+  border: 2px solid #080742;
+  border-radius: 50px;
+  width: 315px;
+  height: 225px;
+  margin-left: 16%;
+  cursor: pointer;
+}
+
+.c-botones_login {
+  border: 2px solid #080742;
+  border-radius: 50px;
+  width: 315px;
+  height: 225px;
+  margin-left: 19%;
+  cursor: pointer;
+}
+
+.c-caja {
+  width: 220px;
+  height: 130px;
+  margin-top: 65px;
+  margin-left: 48px;
+}
+
+.c-caja_titulo {
+  font-size: 25px;
+  font-weight: 500;
+  color: #080742;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.c-caja_iconoI {
+  width: 75px;
+  height: 75px;
+  margin-left: 75px;
+  margin-bottom: 50px;
+}
+
+.c-caja_iconoR {
+  width: 95px;
+  height: 60px;
+  margin-left: 60px;
+}

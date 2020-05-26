@@ -1,0 +1,33 @@
+<div class="nav">
+  <ng-container *ngIf='!authService.isAdmin() && !authService.logeado()'>
+    <img class="logo" src="assets/web-images/logoNuevo.svg" routerLink=''>
+  </ng-container>
+  <ng-container *ngIf='authService.logeado() && !authService.isAdmin()'>
+    <img class="logo" src="assets/web-images/logoNuevo.svg" routerLink='/ejercicios'>
+  </ng-container>
+  <ng-container *ngIf='authService.isAdmin()'>
+    <div class="c-botones_left">
+      <div class='c-botones_item' routerLink='/ejercicios' (click)="active('e')">
+        <p class="c-botones_titulo" routerLinkActive='activo : bEjercicio'>Administrar ejercicios</p>
+      </div>
+      <div class='c-botones_item' routerLink='/usuarios' (click)="active('u')">
+        <p class="c-botones_titulo" routerLinkActive='activo : bUsuario'>Administrar usuarios</p>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf='authService.logeado()'>
+    <div class="c-botones_right">
+      <div class="c-botones_it" *ngIf='authService.isAdmin(); else userImage'>
+        <p class="c-botones_tit">Administrador</p>
+      </div>
+      <ng-template #userImage>
+        <div class="c-botones_it" (click)='user()'>
+          <img class="profile" [src]="sourceImage">
+        </div>
+      </ng-template>
+      <div class="c-botones_logout" (click)='logout()'>
+        <img class="logout" src="assets/web-images/iconoCerrarSesion.png">
+      </div>
+    </div>
+  </ng-container>
+</div>

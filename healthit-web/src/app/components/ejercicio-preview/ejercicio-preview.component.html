@@ -1,0 +1,47 @@
+<div class="page">
+  <img class="fondo" src="assets/web-images/fondoDesenfocado.jpg">
+  <app-navigation></app-navigation>
+  <div *ngIf='!ejercicio; else main'>
+    <h1>Ejercicio no encontrado</h1>
+  </div>
+  <!-- PREVISUALIZAR EJERCICIO USUARIO -->
+  <ng-template #main>
+    <button class="btn-back btn btn-primary" routerLink='/ejercicios'>Volver</button>
+    <div class="c-box">
+      <div class="c-box_title">
+        <p>{{ejercicio.nombre | uppercase}}</p>
+      </div>
+      <a class="c-box_photo" href="{{ejercicio.link}}" target='_blank'>
+        <img [src]="sourceImage">
+      </a>
+      <div class="c-box_details">
+        <div class="c-box_details-lugar">
+          <p class="name">LUGAR</p>
+          <p>{{ejercicio.lugar | uppercase}}</p>
+        </div>
+        <div class="c-box_details-series">
+          <p class="name">SERIES</p>
+          <p>{{ejercicio.series | uppercase}}</p>
+        </div>
+        <div class="c-box_details-material">
+          <p class="name">MATERIAL</p>
+          <p>{{ejercicio.material | uppercase}}</p>
+        </div>
+        <div class="c-box_details-repeticiones">
+          <p class="name">REPS</p>
+          <p>{{ejercicio.repeticiones | uppercase}}</p>
+        </div>
+        <div class="c-box_details-zonas">
+          <p class="name">ZONA/S DEL CUERPO</p>
+          <p class='zonas' *ngFor="let zona of zonasEjercicio">
+            {{zona | uppercase}}
+          </p>
+        </div>
+        <div class="c-box_details-descanso">
+          <p class="name">DESCANSO</p>
+          <p>{{ejercicio.descanso | uppercase}}</p>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>

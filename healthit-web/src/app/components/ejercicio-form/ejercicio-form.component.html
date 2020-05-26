@@ -1,0 +1,85 @@
+<div class="page">
+  <img class="fondo" src="assets/web-images/fondoDesenfocado.jpg">
+  <app-navigation></app-navigation>
+  <button class="btn-back btn btn-primary" routerLink='/ejercicios'>Volver</button>
+  <div class="c-box">
+    <div class="c-title">
+      <p class="c-title_name">Subir ejercicio nuevo</p>
+    </div>
+    <form (submit)="uploadEjercicio()">
+      <div class="c-form">
+        <div class="c-form_option-l">
+          <div class="form-group">
+            <input type="text" [(ngModel)]='ejercicio.nombre' name="nombre" class='form-control'
+              placeholder="Nombre de ejercicio" required autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" [(ngModel)]='ejercicio.series' name="series" class='form-control' placeholder="Series"
+              required>
+          </div>
+          <div class="form-group">
+            <input type="text" [(ngModel)]='ejercicio.repeticiones' name="repeticiones" class='form-control'
+              placeholder="Repeticiones" required>
+          </div>
+          <div class="form-group">
+            <input type="text" [(ngModel)]='ejercicio.descanso' name="descanso" class='form-control'
+              placeholder="Descanso" required>
+          </div>
+          <div class="form-group">
+            <input type="text" [(ngModel)]='ejercicio.link' name="link" class='form-control'
+              placeholder="Link del vídeo" required>
+          </div>
+        </div>
+        <div class="c-form_option-c">
+          <div class="c-group">
+            <label class="seleccion">Género: </label>
+            <input type="radio" class='c-button_radio' value="hombre" name="genero" [(ngModel)]='ejercicio.genero'
+              required>
+            <label class="c-option">Hombre</label>
+            <input type="radio" class='c-button_radio' value="mujer" name="genero" [(ngModel)]='ejercicio.genero'
+              required>
+            <label class="c-option">Mujer</label>
+          </div>
+          <div class="c-group">
+            <label class="seleccion">Material: </label>
+            <input type="radio" class='c-button_radio' value="si" name="material" [(ngModel)]='ejercicio.material'
+              required>
+            <label class="c-option">Si</label>
+            <input type="radio" class='c-button_radio' value="no" name="material" [(ngModel)]='ejercicio.material'
+              required>
+            <label class="c-option">No</label>
+          </div>
+          <div class="c-group">
+            <label class="seleccion">Lugar: </label>
+            <input type="radio" class='c-button_radio' value="casa" name="lugar" [(ngModel)]='ejercicio.lugar' required>
+            <label class="c-option">Casa</label>
+            <input type="radio" class='c-button_radio' value="gimnasio" name="lugar" [(ngModel)]='ejercicio.lugar'
+              required>
+            <label class="c-option">Gimnasio</label>
+          </div>
+        </div>
+        <div class="c-form_option-r">
+          <label class="c-title_parts">Zona/s del cuerpo</label>
+          <div class="c-checkbox">
+            <li class="c-checkbox_item-full">
+              <input type="checkbox" [(ngModel)]="masterSelected" name="list_name" value="m1"
+                (change)="checkUncheckAll()" />Full body
+            </li>
+            <ul class="row">
+              <li class="c-checkbox_item" *ngFor="let item of zCuerpo">
+                <input type="checkbox" [(ngModel)]="item.selected" name="list_name" value="{{item.name}}"
+                  (change)="isAllSelected()" />
+                {{item.name}}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="c-footer">
+        <button class="btn btn-primary">
+          Añadir nuevo
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

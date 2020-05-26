@@ -1,0 +1,45 @@
+<div class="page">
+  <app-navigation></app-navigation>
+  <button class="btn btn-new btn-block" routerLink='/ejercicios/admin/new' *ngIf='authService.isAdmin()'>
+    <p class="btn-title">Nuevo ejercicio</p>
+  </button>
+  <div class="filtro">
+    <div class="input-group">
+      <p class="filtro_name">Genero</p>
+      <select name="miselect" [(ngModel)]="seleccionadoGen" (change)="filtrador()">
+        <option value=''>Sin filtro</option>
+        <option [value]="item" *ngFor="let item of filtro.genero">{{item}}</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <p class="filtro_name">Material</p>
+      <select name="miselect" [(ngModel)]="seleccionadoMat" (change)="filtrador()">
+        <option value=''>Sin filtro</option>
+        <option [value]="item" *ngFor="let item of filtro.material">{{item}}</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <p class="filtro_name">Lugar</p>
+      <select name="miselect" [(ngModel)]="seleccionadoLug" (change)="filtrador()">
+        <option value=''>Sin filtro</option>
+        <option [value]="item" *ngFor="let item of filtro.lugar">{{item}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="row" *ngIf="ejerciciosMostrar.length !== 0; else noFilter">
+    <div class="col-md-4 p-4" *ngFor='let ejercicio of ejerciciosMostrar'>
+      <div class="c-box" (click)='selectedCard(ejercicio._id)'>
+        <img [src]="sourceImage" class="c-box_photo" *ngIf='ejercicio.imagePath === ""; else fileUpload'>
+        <ng-template #fileUpload>
+          <img [src]="'http://localhost:3000/' + ejercicio.imagePath" class="c-box_photo">
+        </ng-template>
+        <div class="c-box_title">
+          {{ejercicio.nombre}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #noFilter>
+    <h1>No hay resultados con esos filtros</h1>
+  </ng-template>
+</div>

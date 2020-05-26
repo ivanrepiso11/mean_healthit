@@ -1,0 +1,62 @@
+<div class="page">
+  <img class="fondo" src="assets/web-images/fondoDesenfocado.jpg">
+  <app-navigation></app-navigation>
+  <div *ngIf='!usuario; else main'>
+    <h1>Usuario no encontrado</h1>
+  </div>
+  <!-- EDITAR USUARIO -->
+  <ng-template #main>
+    <button *ngIf='!authService.isAdmin(); else admin' class="btn-back btn"
+      routerLink='/ejercicios'>Volver</button>
+    <ng-template #admin><button class="btn-back btn btn-primary" routerLink='/usuarios'>Volver</button></ng-template>
+    <div class="c-perfil">
+      <div class="c-perfil_photo">
+        <div class="photo"
+          *ngIf='authService.getIdUser() === id || authService.isAdmin() === id; else photo'>
+          <input type="file" class='d-none' #photoEjercicio (change)="onPhotoSelected($event)">
+          <img [src]="sourceImage" class="img-fluid" (click)="photoEjercicio.click()">
+        </div>
+        <ng-template #photo>
+          <div class="photo">
+            <img [src]="sourceImage" class="img-fluid">
+          </div>
+        </ng-template>
+      </div>
+      <div class="c-perfil_data">
+        <div class="card">
+          <div class="card-header">
+            Perfil de usuario
+          </div>
+          <div class="card-body">
+            <form (submit)='updateUser()' method="post" enctype="multipart/form-data">
+              <div class="form-group">
+                <input type="text" [(ngModel)]="usuario.name" name="name" placeholder="name" class="form-control"
+                  required autofocus>
+              </div>
+              <div class="form-group">
+                <input *ngIf='authService.isAdmin() !== id; else disabled' type="text" [(ngModel)]="usuario.username" name="username" placeholder="username"
+                  class="form-control" required>
+                <ng-template #disabled>
+                  <input type="text" [(ngModel)]="usuario.username" name="username" placeholder="username"
+                    class="form-control" required disabled>
+                </ng-template>
+              </div>
+              <div class="form-group">
+                <input type="password" [(ngModel)]='password' name="password" placeholder="password"
+                  class="form-control" required>
+              </div>
+              <div class="form-group">
+                <input type="password" [(ngModel)]='confirmPasswd' name="confirmPasswd" placeholder="confirm password"
+                  class="form-control" required>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">
+                Actualizar datos
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <!-- footer con component o a mano, ejemplo bajo -->
+</div>

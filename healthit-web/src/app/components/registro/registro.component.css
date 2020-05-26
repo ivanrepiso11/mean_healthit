@@ -1,0 +1,80 @@
+.fondo{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.logo{
+  left: 38.5%;
+  top: 3%;
+  width: 22%;
+  position: absolute;
+  cursor: pointer;
+}
+
+.c-box {
+  border: 4px solid #080742;
+  border-radius: 10px;
+  position: absolute;
+  left: 26.5%;
+  top: 20%;
+  width: 45%;
+  height: 60%;
+}
+
+.btn-registro{
+  font-size: 30px;
+  font-family: "Yu Gothic";
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: left;
+  position: absolute;
+  background-color: transparent;
+  border: 0;
+  left: 545px;
+  top: 545px;
+}
+
+.c-box_username > input {
+  font-size: 30px;
+  line-height: 1.2;
+  text-align: center;
+  position: absolute;
+  left: 55px;
+  top: 115px;
+  width: 500px;
+  height:70px;
+}
+
+.c-box_name > input {
+  font-size: 30px;
+  line-height: 1.2;
+  text-align: center;
+  position: absolute;
+  left: 55px;
+  top: 35px;;
+  width: 500px;
+  height:70px;
+}
+
+.c-box_password > input {
+  font-size: 30px;
+  line-height: 1.2;
+  text-align: center;
+  position: absolute;
+  left: 55px;
+  top: 195px;
+  width: 500px;
+  height:70px;
+}
+
+.c-box_confirmPasswd > input {
+  font-size: 30px;
+  line-height: 1.2;
+  text-align: center;
+  position: absolute;
+  left: 55px;
+  top: 275px;
+  width: 500px;
+  height:70px;
+}
